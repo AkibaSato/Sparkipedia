@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<head>
+    <title>Sparkepedia</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
+
+    <link rel="stylesheet" th:href="@{/css/main.css}" href="../../css/main.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+
+    <body>
+
+        <h2> SPARKEPEDIA  </h2>
+        <p> Sponsored by caffeine and tears </p>
+        <h3 class="mb-1" th:text="${query}">Query</h3>
+        <h5 class="mb-1" th:text="${runtime}">Title</h5>
+
+        <div class="list-group">
+
+            <div th:each="link : ${links}">
+
+                <a class="list-group-item list-group-item-action flex-column align-items-start">
+
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1" th:text="${link.getTitle()}">Title</h5>
+                        <small th:text="${link.getText()}">  </small>
+                    </div>
+                    <p class="mb-1" th:text="${link.getDocID()}">Doc ID goes here </p>
+                </a>
+
+            </div>
+
+        </div>
+    </body>
+
+</html>
+
+
+

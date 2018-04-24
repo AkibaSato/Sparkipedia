@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+	<head>
+	    <title>Sparkepedia</title>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
+
+        <link rel="stylesheet" th:href="@{/css/main.css}" href="../../css/main.css" />
+        <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+	</head>
+
+	<body>
+
+		<h2> SPARKEPEDIA  </h2>
+		<p> Sponsored by caffeine and tears </p>
+
+		<!--<input type="text" class="form-control" placeholder="Type things here!!!">-->
+
+		<h5 class="mb-1" th:text="${errorMessage}"></h5>
+
+		<!--<form action="search" method="post">
+			<div class="form-group">
+				<input type="text"
+					   class="form-control"
+					   name="query" value="Type Things here!!!">
+				<br>
+				<center>
+				</center>
+			</div>
+		</form>-->
+
+		<form action="#" th:action="@{/search}" method="POST">
+			<!--<p>Username: <input type="text" th:field="*{username}" /></p>
+            <p>Password: <input type="text" th:field="*{password}" /></p>-->
+			<div class="form-group">
+				<label><input type="text" class="form-control" name="query"/> </label>
+			</div>
+
+			<button type="submit" class="btn btn-info">Search</button>
+			<!--<p><input type="submit" value="Submit" /> </p>-->
+		</form>
+
+	</body>
+
+</html>
+
+
+
